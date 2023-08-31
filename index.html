@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT = CAVEAR (regular) using google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Etch A Sketch</title>
   </head>
   <body>
     <header>
       <h1>Etch A Sketch</h1>
     </header>
-    <div class="buttons-container"></div>
+    <div class="gridSizeSlider-container">
+      <input type="range">
+      <button type="button">Confirm</button>
+    </div>
+    <div class="buttons-container">
+      <button type="button">Color Picker Placeholder</button>
+      <button type="button">Eraser</button>
+      <button type="button">Reset Board</button>
+    </div>
     <div class="sketch-container"></div>
   </body>
 </html>
