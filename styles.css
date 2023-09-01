@@ -71,12 +71,13 @@ h1 {
 .grid-container {
   margin: 2vh 10vw;
   border: 5px solid gray;
+  border-radius: 10px;
   height: 500px;
   width: 1000px;
   display: grid;
+  grid-template-columns: repeat(4, auto);
 }
 
 .grid-box {
-  background-color: black;
   border: 5px solid blue;
 }
