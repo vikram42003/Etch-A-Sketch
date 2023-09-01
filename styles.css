@@ -8,8 +8,8 @@
 
 body {
   font-family: "Caveat", cursive;
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   padding: 0 10vw;
 }
 
@@ -30,8 +30,9 @@ h1 {
 }
 
 .slider {
-  max-width:  500px;
+  max-width: 500px;
   flex: 1;
+  cursor: pointer;
 }
 
 .slider-value {
@@ -49,12 +50,33 @@ h1 {
 .buttons {
   padding: 4px 16px;
   font-size: 1.5rem;
+  font-weight: 600;
   font-family: inherit;
   border: 3px solid grey;
   border-radius: 30px;
 }
 
+.buttons:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.buttons:active {
+  transition: 0.1s;
+  background-color: darkgray;
+}
+
 /* SKETCH CONTAINER */
 
-.sketch-container {
+.grid-container {
+  margin: 2vh 10vw;
+  border: 5px solid gray;
+  height: 500px;
+  width: 1000px;
+  display: grid;
+}
+
+.grid-box {
+  background-color: black;
+  border: 5px solid blue;
 }
