@@ -9,6 +9,9 @@ drawGrid(initial_gridSize / 2, initial_gridSize);
 
 
 function drawGrid(gridSize_Height, gridSize_Width) {
+  // Display current grid size in slider value
+  document.querySelector(".slider-value").textContent = `SIZE: ${gridSize_Height} X ${gridSize_Width}`;
+
   const gridContainer = document.querySelector(".grid-container");
   const gridFragment = new DocumentFragment();
 
