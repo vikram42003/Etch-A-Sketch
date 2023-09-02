@@ -4,10 +4,17 @@ const initial_gridSize = 16;
 let color = "#000000";
 
 drawGrid(initial_gridSize / 2, initial_gridSize);
+addButtonEventListeners();
 
 
+// ADD GRADIENT ANIMATIONS BUTTON FOR FUN !!!
 
 
+function addButtonEventListeners() {
+  const toggleGrid_Button = document.getElementById("toggle-grid");
+
+  toggleGrid_Button.addEventListener("click", toggleGrid);
+}
 
 function drawGrid(gridSize_Height, gridSize_Width) {
   // Display current grid size in slider value
@@ -42,7 +49,6 @@ function changeGridBoxColor(event) {
     }
 }
 
-
 // Changes the color of the boxes pressed AFTER the initial box
 function changeSubsequentGridBoxColor(event) {
   // If the element DOES NOT have a background color 
@@ -54,4 +60,19 @@ function changeSubsequentGridBoxColor(event) {
       event.target.classList.contains("grid-box")) {
     event.target.style.backgroundColor = color;
   }
+}
+
+
+
+function toggleGrid(event) {
+  event.target.classList.toggle("toggle-button-active");
+
+  const boxes = document.querySelectorAll(".grid-box");
+  boxes.forEach(box => {
+    if (box.style.border === "unset") {
+      box.style.border = "1px solid blue";
+    } else {
+      box.style.border = "unset";
+    }
+  });
 }

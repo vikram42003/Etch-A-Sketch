@@ -81,3 +81,24 @@ h1 {
 .grid-box {
   border: 1px solid blue;
 }
+
+
+
+.toggle-button-active {
+  background-color: grey;
+}
+
+.background-animation {
+  background-size: 400%;
+  background-image: linear-gradient(to right, red, blue, green, yellow);
+  animation: gradientTransition 10s infinite alternate;
+}
+
+@keyframes gradientTransition {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
