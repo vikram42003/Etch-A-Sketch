@@ -1,9 +1,9 @@
 "use strict";
 
-const initial_gridSize = 16;
+let gridSize = 16;
 let color = "#000000";
 
-drawGrid(initial_gridSize / 2, initial_gridSize);
+drawGrid();
 addButtonEventListeners();
 
 
@@ -22,17 +22,26 @@ function addButtonEventListeners() {
   const toggleGrid_Button = document.getElementById("toggle-grid");
   const eraser_Button = document.getElementById("eraser-button");
   const resetBoard_Button = document.getElementById("reset-board");
+  const slider_Button = document.querySelector(".slider");
+  const drawGrid_Button = document.getElementById("drawGrid-button");
 
   toggleGrid_Button.addEventListener("click", toggleGrid);
   eraser_Button.addEventListener("click", eraser);
   resetBoard_Button.addEventListener("click", resetBoard);
+  slider_Button.addEventListener("input", sliderHandler);
+  drawGrid_Button.addEventListener("click", drawGrid)
 }
 
-function drawGrid(gridSize_Height, gridSize_Width) {
-  // Display current grid size in slider value
-  document.querySelector(".slider-value").textContent = `SIZE: ${gridSize_Height} X ${gridSize_Width}`;
+function drawGrid() {
+  const gridSize_Height = gridSize / 2;
+  const gridSize_Width = gridSize;
+
+  // Clear the container before drawing the grid
+  const boxes = document.querySelectorAll(".grid-box");
+  boxes.forEach(box => box.remove());
 
   const gridContainer = document.querySelector(".grid-container");
+
   // Disable the default behavior of selecting text on drag
   gridContainer.addEventListener("mousedown", (event) => {
     event.preventDefault();
@@ -73,6 +82,16 @@ function changeSubsequentGridBoxColor(event) {
 }
 
 
+
+function sliderHandler(event) {
+  event.preventDefault();
+  // y = 8 * 2^(x - 1)
+  // Formula to get the desired values (y) of 8, 16, 32, 64, 128
+  // Where event.target.value (x) is 1, 2, 3, 4, 5
+  const value = 8 * 2**(event.target.value -1);
+  gridSize = value;
+  document.querySelector(".slider-value").textContent = `SIZE: ${value / 2} X ${value}`;  
+}
 
 function eraser() {
   // Changes the box color on click to be pure white

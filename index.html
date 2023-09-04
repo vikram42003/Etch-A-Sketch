@@ -16,9 +16,11 @@
       <h1>Etch A Sketch</h1>
     </header>
     <div class="gridSizeSlider-container">
-      <input type="range" class="slider" />
+      <!-- This is an input slider which controls the size of the grid -->
+      <!-- Has 5 presets for grid size width - 8, 16, 32, 64, 128 (grid height = width / 2) -->
+      <input type="range" class="slider" min="1" max="5" step="1" value="2"/>
       <p class="slider-value">SIZE: 8 X 16</p>
-      <button type="button" class="buttons">Confirm</button>
+      <button type="button" class="buttons" id="drawGrid-button">Confirm</button>
     </div>
     <div class="buttons-container">
       <button type="button" class="buttons">Color Picker Placeholder</button>
