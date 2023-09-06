@@ -7,7 +7,6 @@ drawGrid();
 addButtonEventListeners();
 
 
-// ADD GRADIENT ANIMATIONS BUTTON FOR FUN !!!
 
 
 
@@ -15,7 +14,7 @@ addButtonEventListeners();
 /*  NOTE - Right now the functions like toggle grid, reset board make changes 
     by iteration over each box one by one. Which is quite inefficient imo
     when you come back to this project then work on improving overall efficiency
-    and maybe add additional functionality
+    make grid container proportionately shrinkable and maybe add additional functionality
 */
 
 function addButtonEventListeners() {
@@ -33,6 +32,7 @@ function addButtonEventListeners() {
   drawGrid_Button.addEventListener("click", drawGrid);
   colorPicker_Button.addEventListener("input", colorPicker);
 }
+
 
 function drawGrid() {
   const gridSize_Height = gridSize / 2;
