@@ -62,7 +62,40 @@ h1 {
 .buttons-container {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/*I somehow weasled by way into creating a circular input button without using any non standard
+  or complicated css or javascript. But change it into something more trustable because for now it feels
+  like i just slapped a bandaid on it. But for now, If it works then it works!
+  from what ive gathered, for the button to remain circular, minimum spam Height = (input's Height - 1) / 2
+*/
+
+#color-picker {
+  height: 7rem;
+  width: 7rem;
+  border: none;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  overflow: hidden;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-left: -0.5vw;
+  transition: 0.5s;
+}
+
+span:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
 .buttons {
