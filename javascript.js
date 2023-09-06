@@ -24,12 +24,14 @@ function addButtonEventListeners() {
   const resetBoard_Button = document.getElementById("reset-board");
   const slider_Button = document.querySelector(".slider");
   const drawGrid_Button = document.getElementById("drawGrid-button");
+  const colorPicker_Button = document.getElementById("color-picker");
 
   toggleGrid_Button.addEventListener("click", toggleGrid);
   eraser_Button.addEventListener("click", eraser);
   resetBoard_Button.addEventListener("click", resetBoard);
   slider_Button.addEventListener("input", sliderHandler);
-  drawGrid_Button.addEventListener("click", drawGrid)
+  drawGrid_Button.addEventListener("click", drawGrid);
+  colorPicker_Button.addEventListener("input", colorPicker);
 }
 
 function drawGrid() {
@@ -91,6 +93,10 @@ function sliderHandler(event) {
   const value = 8 * 2**(event.target.value -1);
   gridSize = value;
   document.querySelector(".slider-value").textContent = `SIZE: ${value / 2} X ${value}`;  
+}
+
+function colorPicker(event) {
+  color = event.target.value;
 }
 
 function eraser() {
